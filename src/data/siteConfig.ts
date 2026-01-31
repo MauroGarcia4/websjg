@@ -33,9 +33,9 @@ export const siteConfig = {
     
     // Redes sociales
     social: {
-      facebook: 'https://facebook.com/sjgmontajes',
-      instagram: 'https://instagram.com/sjgmontajes',
-      linkedin: 'https://linkedin.com/company/sjgmontajes',
+      facebook: 'https://www.facebook.com/SJGmontajesindustriales',
+      instagram: 'https://www.instagram.com/sjgmontajesindustriales/',
+      linkedin: 'https://www.linkedin.com/company/sjgmontajes/',
     },
   },
   
