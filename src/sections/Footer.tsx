@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { siteConfig } from '@/data/siteConfig';
-import { generateTelLink } from '@/lib/utils';
+import { generateWhatsAppLink } from '@/lib/utils';
 import { 
   MapPin, 
   Phone, 
@@ -26,7 +26,7 @@ const Footer = () => {
   
   const currentYear = new Date().getFullYear();
   const { company, navigation } = siteConfig;
-  const telLink = generateTelLink(company.contact.phone);
+  const whatsappLink = generateWhatsAppLink(company.contact.phoneRaw, siteConfig.whatsapp.message);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -182,9 +182,11 @@ const Footer = () => {
                 {company.contact.address.street}, {company.contact.address.city}
               </div>
               <a 
-                href={telLink}
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[#888] hover:text-white transition-colors"
-                aria-label="Llamar a SJG Montajes Industriales"
+                aria-label="Contactar por WhatsApp a SJG Montajes Industriales"
               >
                 <Phone className="w-4 h-4 text-white" />
                 {company.contact.phone}
