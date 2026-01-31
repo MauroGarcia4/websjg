@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Phone, ChevronDown, MapPin, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
-import { generateTelLink } from '@/lib/utils';
+import { generateWhatsAppLink } from '@/lib/utils';
 import { useSmoothScroll } from '@/hooks';
 
 /**
@@ -13,7 +13,7 @@ const Hero = () => {
   const { scrollTo } = useSmoothScroll();
   const { company } = siteConfig;
   
-  const telLink = generateTelLink(company.contact.phone);
+  const whatsappLink = generateWhatsAppLink(company.contact.phoneRaw, siteConfig.whatsapp.message);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -128,9 +128,11 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </button>
             <a
-              href={telLink}
+              href={whatsappLink}
               className="sjg-btn sjg-btn-outline sjg-btn-lg"
-              aria-label="Llamar por teléfono"
+              aria-label="Contactar por WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               Llamar Ahora

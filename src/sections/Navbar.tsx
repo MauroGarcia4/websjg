@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { useScrollPosition, useSmoothScroll } from '@/hooks';
 import { siteConfig } from '@/data/siteConfig';
-import { generateTelLink } from '@/lib/utils';
+import { generateWhatsAppLink } from '@/lib/utils';
 
 /**
  * Navbar principal del sitio
@@ -15,8 +15,8 @@ const Navbar = () => {
   const { isScrolled } = useScrollPosition();
   const { scrollTo } = useSmoothScroll();
   
-  const { navigation, company } = siteConfig;
-  const telLink = generateTelLink(company.contact.phone);
+  const { navigation, company, whatsapp } = siteConfig;
+  const whatsappLink = generateWhatsAppLink(company.contact.phoneRaw, whatsapp.message);
 
   // Cerrar menú mobile al redimensionar a desktop
   useEffect(() => {
@@ -113,9 +113,11 @@ const Navbar = () => {
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href={telLink}
+                href={whatsappLink}
                 className="sjg-btn sjg-btn-ghost text-sm"
-                aria-label="Llamar por teléfono"
+                aria-label="Contactar por WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Phone className="w-4 h-4" />
                 Llamar
@@ -186,8 +188,10 @@ const Navbar = () => {
             
             <div className="mt-4 pt-4 border-t border-[#222] space-y-3">
               <a
-                href={telLink}
+                href={whatsappLink}
                 className="sjg-btn sjg-btn-outline w-full text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Phone className="w-4 h-4" />
                 Llamar Ahora

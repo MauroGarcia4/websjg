@@ -15,8 +15,8 @@ export const siteConfig = {
     
     // Contacto
     contact: {
-      phone: '+54 3364 123456',
-      phoneRaw: '543364123456', // Para WhatsApp
+      phone: '+54 336 421-3653',
+      phoneRaw: '543364213653', // Para WhatsApp
       email: 'info@sjgmontajes.com',
       address: {
         street: 'Hipólito Yrigoyen 650',

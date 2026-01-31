@@ -2,7 +2,7 @@ import { useScrollAnimation } from '@/hooks';
 import { useContactForm } from '@/hooks/useContactForm';
 import { services } from '@/data/services';
 import { siteConfig } from '@/data/siteConfig';
-import { generateTelLink } from '@/lib/utils';
+import { generateWhatsAppLink } from '@/lib/utils';
 import { 
   MapPin, 
   Phone, 
@@ -37,7 +37,7 @@ const Contact = () => {
   } = useContactForm();
 
   const { company } = siteConfig;
-  const telLink = generateTelLink(company.contact.phone);
+  const whatsappLink = generateWhatsAppLink(company.contact.phoneRaw, siteConfig.whatsapp.message);
 
   const contactInfo = [
     {
@@ -51,7 +51,7 @@ const Contact = () => {
       title: 'Teléfono',
       content: company.contact.phone,
       subContent: company.contact.hours.weekday,
-      href: telLink,
+      href: whatsappLink,
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -144,8 +144,10 @@ const Contact = () => {
 
             {/* Botón Llamar Ahora */}
             <a
-              href={telLink}
+              href={whatsappLink}
               className="sjg-btn sjg-btn-outline w-full"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Phone className="w-4 h-4" />
               Llamar Ahora

@@ -224,7 +224,7 @@ export const siteConfig = {
     name: 'SJG Montajes Industriales S.R.L.',
     cuit: '30-71655883-1',
     contact: {
-      phone: '+54 3364 123456',
+      phone: '+54 336 421-3653',
       email: 'info@sjgmontajes.com',
       address: {
         street: 'Hipólito Yrigoyen 650',
@@ -331,7 +331,7 @@ Todos los derechos reservados © 2024
 
 **SJG Montajes Industriales S.R.L.**
 - 📍 Hipólito Yrigoyen 650, San Nicolás de los Arroyos, BA
-- 📞 +54 3364 123456
+- 📞 +54 336 421-3653
 - ✉️ info@sjgmontajes.com
 
 ---

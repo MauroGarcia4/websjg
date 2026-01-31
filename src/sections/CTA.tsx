@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
+import { siteConfig } from '@/data/siteConfig';
 
 const CTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -91,7 +92,7 @@ const CTA = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm mb-1">Teléfono</p>
-                    <p className="text-white font-medium">+54 9 336 123-4567</p>
+                    <p className="text-white font-medium">{siteConfig.company.contact.phone}</p>
                   </div>
                 </div>
 
