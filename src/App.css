@@ -1,0 +1,81 @@
+/* ==========================================================================
+   SJG MONTAJES INDUSTRIALES - APP STYLES
+   Optimizaciones de performance y utilidades adicionales
+   ========================================================================== */
+
+/* Lazy loading placeholder */
+.lazy-image {
+  background: linear-gradient(90deg, #1c1c1f 25%, #232326 50%, #1c1c1f 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.lazy-image.loaded {
+  animation: none;
+  background: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Image optimization */
+img {
+  content-visibility: auto;
+}
+
+/* Contain paint for better performance */
+.sjg-section {
+  contain: layout style paint;
+}
+
+/* GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Focus trap for modals */
+.focus-trap:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --sjg-yellow: #ffff00;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .sjg-btn:hover::before {
+    display: none;
+  }
+  
+  .sjg-card:hover {
+    transform: none;
+  }
+}
+
+/* Content visibility for off-screen sections */
+@media (min-width: 1024px) {
+  .sjg-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+}
