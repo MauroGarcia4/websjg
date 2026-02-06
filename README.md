@@ -9,7 +9,7 @@ Sitio web profesional para SJG Montajes Industriales S.R.L., empresa de servicio
 
 ## 🌐 Demo en vivo
 
-[https://sjgmontajes.com](https://sjgmontajes.com) *(reemplazar con URL real)*
+[https://sjgmontajes.com]([https://sjgmontajes.com](https://websjg.vercel.app/))
 
 ---
 
@@ -17,11 +17,7 @@ Sitio web profesional para SJG Montajes Industriales S.R.L., empresa de servicio
 
 - [Características](#características)
 - [Tecnologías](#tecnologías)
-- [Instalación](#instalación)
-- [Desarrollo local](#desarrollo-local)
-- [Deploy en Vercel](#deploy-en-vercel)
 - [Estructura del proyecto](#estructura-del-proyecto)
-- [Configuración](#configuración)
 - [SEO y Marketing](#seo-y-marketing)
 - [Escalabilidad](#escalabilidad)
 - [Licencia](#licencia)
@@ -74,92 +70,6 @@ Sitio web profesional para SJG Montajes Industriales S.R.L., empresa de servicio
 
 ---
 
-## 📦 Instalación
-
-### Requisitos previos
-
-- Node.js 18+ 
-- npm o yarn
-- Git
-
-### Paso 1: Clonar el repositorio
-
-```bash
-git clone https://github.com/tu-usuario/sjg-montajes.git
-cd sjg-montajes
-```
-
-### Paso 2: Instalar dependencias
-
-```bash
-npm install
-# o
-yarn install
-```
-
----
-
-## 💻 Desarrollo local
-
-### Iniciar servidor de desarrollo
-
-```bash
-npm run dev
-# o
-yarn dev
-```
-
-El sitio estará disponible en: `http://localhost:5173`
-
-### Comandos disponibles
-
-| Comando | Descripción |
-|---------|-------------|
-| `npm run dev` | Iniciar servidor de desarrollo |
-| `npm run build` | Compilar para producción |
-| `npm run preview` | Previsualizar build de producción |
-| `npm run lint` | Ejecutar ESLint |
-| `npm run type-check` | Verificar tipos de TypeScript |
-
----
-
-## 🚀 Deploy en Vercel
-
-### Opción 1: Deploy automático con Git
-
-1. Sube el proyecto a GitHub/GitLab/Bitbucket
-2. Conecta tu repositorio en [Vercel](https://vercel.com)
-3. Vercel detectará automáticamente la configuración
-4. Cada push a `main` generará un nuevo deploy
-
-### Opción 2: Deploy manual con CLI
-
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
-
-# Login
-vercel login
-
-# Deploy
-vercel --prod
-```
-
-### Configuración de Vercel
-
-El archivo `vercel.json` ya está configurado:
-
-```json
-{
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install"
-}
-```
-
----
-
 ## 📁 Estructura del proyecto
 
 ```
@@ -209,66 +119,6 @@ sjg-montajes/
 ├── vercel.json           # Configuración Vercel
 └── README.md
 ```
-
----
-
-## ⚙️ Configuración
-
-### Información de la empresa
-
-Edita `src/data/siteConfig.ts` para actualizar:
-
-```typescript
-export const siteConfig = {
-  company: {
-    name: 'SJG Montajes Industriales S.R.L.',
-    cuit: '30-71655883-1',
-    contact: {
-      phone: '+54 336 421-3653',
-      email: 'info@sjgmontajes.com',
-      address: {
-        street: 'Hipólito Yrigoyen 650',
-        city: 'San Nicolás de los Arroyos',
-        // ...
-      }
-    }
-  }
-}
-```
-
-### Servicios
-
-Edita `src/data/services.ts` para agregar/modificar servicios:
-
-```typescript
-export const services: Service[] = [
-  {
-    id: 'nuevo-servicio',
-    icon: IconComponent,
-    title: 'Nuevo Servicio',
-    description: 'Descripción...',
-    scope: ['Item 1', 'Item 2'],
-    keywords: ['keyword1', 'keyword2'],
-  },
-  // ...
-];
-```
-
-### Proyectos
-
-Edita `src/data/projects.ts` para agregar proyectos:
-
-```typescript
-export const projects: Project[] = [
-  {
-    id: 7,
-    title: 'Nuevo Proyecto',
-    category: 'montajes',
-    // ...
-  },
-];
-```
-
 ---
 
 ## 🔍 SEO y Marketing
